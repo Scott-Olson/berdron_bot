@@ -2,7 +2,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/scott-olson/berdron_bot">
     <img src="images/berdron_bot_logo.png" alt="Logo" width="auto" height="125">
   </a>
 
