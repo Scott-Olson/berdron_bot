@@ -1,27 +1,3 @@
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
-***
-***
-***
-*** To avoid retyping too much info. Do a search and replace for the following:
-*** github_username, repo_name, twitter_handle, email, project_title, project_description
--->
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-
-
 
 <!-- PROJECT LOGO -->
 <br />
@@ -35,18 +11,9 @@
   <p align="center">
     A custom Twitch chat bot built by <a href"https://twitch.tv/berdron>Berdron</a> for his stream. 
     <br />
-    <!-- <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a> -->
+
   </p>
 </p>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -66,13 +33,8 @@
 
 </br>
 
-
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-
 
 Berdron_Bot is a custom chat bot designed for Berdron's unique chatting needs. 
 
@@ -99,7 +61,6 @@ One of the most amusing "because I can" features is how the Raspberry Pi will co
 * [Docker]()
 * [Arduino FastLED]() 
 
-
 <!-- USAGE EXAMPLES -->
 ## 🚀 Usage 🚀
 
@@ -113,19 +74,12 @@ Commands that are being implemented now:
 * !set_bot_color - a way to set the color for this Bot, redeemed by channel points
 * !aboutbb - get info about the bot, link to here
 
-
-
-
-
 <!-- ROADMAP -->
 ## Roadmap
-
 
 This is the initial tech design I came up with. It will evolve and grow as the bot does.
 
 ![Design drawing](images/berdron_bot_design.jpeg)
-
-
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -137,9 +91,6 @@ Contributions are what make the open source community such an amazing place to b
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-
-
 
 <!-- CONTACT -->
 ## Contact
