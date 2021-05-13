@@ -49,8 +49,8 @@ One of the most amusing "because I can" features is how the Raspberry Pi will co
 </br>
 <img src="images/b_b_logo.png" alt="Logo" width="auto" height="50"> 
 
-</br>
-</br>
+To keep the bot beeping along and up to date, I will have a local MongoDB container running along side the bot which will be used to store all the info for the bot consume. There will also be a Redis cache container running that will query the MongoDB anytime there is a new chatter in chat. To ensure continuity, I will set up an off-raspi back-up for the MongoDB.
+
 
 ### 🔧  Built With 🔧
 
