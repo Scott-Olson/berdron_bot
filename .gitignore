@@ -1,6 +1,5 @@
 node_modules
 config.js
 .env
-docker-compose.dev.yml
 package-lock.json
 .dockerignore
