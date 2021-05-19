@@ -81,6 +81,23 @@ This is the initial tech design I came up with. It will evolve and grow as the b
 
 ![Design drawing](images/berdron_bot_design.jpeg)
 
+
+### TODO 
+ * [x] Design and outline scope
+ * [x] Bot skeleton
+ * [x] Hello world function
+ * [ ] Build out functions
+   * [ ] get/set colors
+   * [ ] get user info
+   * [ ] get bot details
+   * [ ] welcome message
+ * [ ] Build database
+   * [ ] database interactions/functions
+ * [ ] MQTT set up bot side
+ * [ ] MQTT set up arduino side
+
+
+
 <!-- CONTRIBUTING -->
 ## Contributing
 
