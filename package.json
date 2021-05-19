@@ -1,0 +1,27 @@
+{
+  "name": "berdron_bot",
+  "version": "1.0.0",
+  "description": "<!-- PROJECT LOGO --> <br /> <p align=\"center\">   <a href=\"https://github.com/scott-olson/berdron_bot\">     <img src=\"images/berdron_bot_logo.png\" alt=\"Logo\" width=\"auto\" height=\"125\">   </a>",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Scott-Olson/berdron_bot.git"
+  },
+  "author": "berdron",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Scott-Olson/berdron_bot/issues"
+  },
+  "homepage": "https://github.com/Scott-Olson/berdron_bot#readme",
+  "dependencies": {
+    "dotenv": "^9.0.2",
+    "mongoose": "^5.12.10",
+    "tmi.js": "^1.8.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
