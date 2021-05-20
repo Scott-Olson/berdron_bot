@@ -86,6 +86,7 @@ This is the initial tech design I came up with. It will evolve and grow as the b
  * [x] Design and outline scope
  * [x] Bot skeleton
  * [x] Hello world function
+ * [x] Get test env running on raspi
  * [ ] Build out functions
    * [ ] get/set colors
    * [ ] get user info
@@ -113,11 +114,11 @@ Message structure:
   flags: null,
   id: '542a8329-12b5-477a-b91c-e1a681dd643b',
   mod: true,
-  'room-id': '109015739',
+  'room-id': '',
   subscriber: true,
-  'tmi-sent-ts': '1621468841249',
+  'tmi-sent-ts': '',
   turbo: false,
-  'user-id': '615898281',
+  'user-id': '',
   'user-type': 'mod',
   'emotes-raw': null,
   'badge-info-raw': 'subscriber/1',
