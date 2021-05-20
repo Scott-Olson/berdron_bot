@@ -41,6 +41,11 @@ client.on('disconnected', (reason) => {
     onDisconnectHandler(reason);
 });
 
+// reconnecting to server
+client.on('reconnect', () => {
+    onReconnectHandler();
+}); 
+
 // user joins the chat. Use this to catalog user data. 
 client.on('join', (username) => {
     onJoinHandler(username);
@@ -56,6 +61,43 @@ client.on('hosted', (username, viewers, autohost) => {
 client.on('subscription', (username, method, message, userstate) => {
    onSubscriptionHandler(username, method, message, userstate); 
 });
+
+//on raid from another streamer
+client.on('raided', (username, viewers) => {
+    onRaidHandler(username, viewers);
+});
+
+//cheering by viewer
+client.on('cheer', (userstate, message) => {
+    onCheerHandler(userstate, message);
+});
+
+//upgrading gifted sub to selfpaid sub
+client.on('giftpaidupgrade', (username, sender, userstate) => {
+    onGiftUpgradeHandler(username, sender, userstate);
+});
+
+//on Berdron hosting another channel
+client.on('hosting', (target, viewers) => {
+    onHostingHandler(target, viewers);
+});
+
+//resub event
+//username of resub, months as sub, sub message, userstate, method of subscription 
+client.on('resub', (username, months, message, userstate, methods) => {
+    onResubhandler(username, months, message, userstate, methods);
+});
+
+//subgift event
+//username of gift sender, number of months for recipient, username of recipient, method of sub
+// userstate:
+//  userstate["msg-param-recipient-display-name"]: String - The display name of the recipient
+//  userstate["msg-param-recipient-id"]: String - The ID of the recipient
+//  userstate["msg-param-recipient-user-name"]: String - The login of the recipient
+//  userstate["msg-param-sender-count"] : Boolean or String - The count of giftsubs the sender has sent
+client.on('subgift', (username, streakMonths, recipient, methods, userstate) => {
+    onSubgiftHandler(username, streakMonths, recipient, methods, userstate);
+}); 
 
 
 
