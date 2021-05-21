@@ -99,8 +99,6 @@ client.on('subgift', (username, streakMonths, recipient, methods, userstate) => 
     onSubgiftHandler(username, streakMonths, recipient, methods, userstate);
 }); 
 
-
-
 // monitor messages
 client.on('message', (channel, tags, message, self) => {
     // protect against loop on bot messages
@@ -149,4 +147,39 @@ function onConnectingHandler(address, port) {
 
 function onConnectedHandler(address, port) {
     console.log('Connected to the chat successfully!')
-}
+};
+
+
+function onDisconnectHandler() {
+
+};
+function onReconnectHandler() {
+
+};
+function onJoinHandler() {
+
+};
+function onHostHandler() {
+
+};
+function onSubscriptionHandler() {
+
+};
+function onRaidHandler() {
+
+};
+function onCheerHandler() {
+
+};
+function onGiftUpgradeHandler() {
+
+};
+function onHostingHandler() {
+
+};
+function onResubhandler() {
+
+};
+function onSubgiftHandler() {
+
+};
