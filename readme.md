@@ -123,15 +123,15 @@ Message structure:
 
   mod: true,
 
-  'room-id': '',
+  'room-id': '  ',
 
   subscriber: true,
 
-  'tmi-sent-ts': '',
+  'tmi-sent-ts': '   ',
 
   turbo: false,
 
-  'user-id': '',
+  'user-id': '   ',
 
   'user-type': 'mod',
 
