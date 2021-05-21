@@ -1,4 +1,3 @@
-const { channel } = require('diagnostic_channel');
 const tmi = require('tmi.js');
 require('dotenv').config();
 
@@ -154,7 +153,7 @@ function onDisconnectHandler() {
 
 };
 function onReconnectHandler() {
-
+ 
 };
 function onJoinHandler() {
 
