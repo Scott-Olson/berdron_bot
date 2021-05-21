@@ -105,45 +105,19 @@ Message structure:
 
 `tags`:
 {
-  'badge-info': { subscriber: '1' },
+  'badge-info': { subscriber: '1' }, badges: { moderator: '1', subscriber: '0' },
 
-  badges: { moderator: '1', subscriber: '0' },
+  'client-nonce': 'some-nonce', color: '#00FF7F', 'display-name': 'berdron_bot', emotes: null,
 
-  'client-nonce': 'some-nonce',
+  flags: null, id: '542a8329-12b5-477a-b91c-e1a681dd643b', mod: true,
 
-  color: '#00FF7F',
+  'room-id': '  ', subscriber: true, 'tmi-sent-ts': '   ',
 
-  'display-name': 'berdron_bot',
+  turbo: false, 'user-id': '   ', 'user-type': 'mod', 'emotes-raw': null,
 
-  emotes: null,
+  'badge-info-raw': 'subscriber/1', 'badges-raw': 'moderator/1,subscriber/0',
 
-  flags: null,
-
-  id: '542a8329-12b5-477a-b91c-e1a681dd643b',
-
-  mod: true,
-
-  'room-id': '  ',
-
-  subscriber: true,
-
-  'tmi-sent-ts': '   ',
-
-  turbo: false,
-
-  'user-id': '   ',
-
-  'user-type': 'mod',
-
-  'emotes-raw': null,
-
-  'badge-info-raw': 'subscriber/1',
-
-  'badges-raw': 'moderator/1,subscriber/0',
-
-  username: 'berdron_bot',
-
-  'message-type': 'chat'
+  username: 'berdron_bot', 'message-type': 'chat'
 }
 
 
