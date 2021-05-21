@@ -22,7 +22,10 @@ client.connect();
 
 // currentBrew holds the current brew for the command !brew
 var currentBrew = 'Tremor California Lager';
+var streamSettings = {
+    newUserGreet: true,
 
+}
 
 // EVENTS
 // client connection attempt
@@ -95,7 +98,7 @@ client.on('resub', (username, months, message, userstate, methods) => {
 //  userstate["msg-param-recipient-user-name"]: String - The login of the recipient
 //  userstate["msg-param-sender-count"] : Boolean or String - The count of giftsubs the sender has sent
 client.on('subgift', (username, streakMonths, recipient, methods, userstate) => {
-    onSubgiftHandler(username, streakMonths, recipient, methods, userstate);
+    onSubGiftHandler(username, streakMonths, recipient, methods, userstate);
 }); 
 
 // monitor messages
@@ -149,21 +152,29 @@ function onConnectedHandler(address, port) {
 };
 
 
-function onDisconnectHandler() {
+function onDisconnectHandler(reason) {
+    console.log(`Disconnected from chat, ${reason}`);
+};
 
-};
 function onReconnectHandler() {
- 
+    console.log('Reconnected to chat successfully!')
 };
-function onJoinHandler() {
+
+function onJoinHandler(username) {
+    if (streamSettings.newUserGreet) {
+        sendSimlpeMessage('berdron', `Hi ${username}, welcome to the stream!`)
+    }
+    createUserValue(username);
 
 };
 function onHostHandler() {
 
 };
+
 function onSubscriptionHandler() {
 
 };
+
 function onRaidHandler() {
 
 };
@@ -179,6 +190,18 @@ function onHostingHandler() {
 function onResubhandler() {
 
 };
-function onSubgiftHandler() {
+function onSubGiftHandler() {
 
+};
+
+function sendSimlpeMessage(channel, message) {
+    client.say(channel, message);
+};
+
+function createUserValue(username) {
+    console.log('This will do the db stuff');
+};
+
+function getUserColor(username) {
+    console.log('This will query db for user color');
 };
