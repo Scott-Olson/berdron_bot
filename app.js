@@ -161,6 +161,9 @@ function onReconnectHandler() {
 };
 
 function onJoinHandler(username) {
+    if (username === "berdron_bot" || username === "berdron" || username === "moobot"){
+        break
+    }
     if (streamSettings.newUserGreet) {
         sendSimlpeMessage('berdron', `Hi ${username}, welcome to the stream!`)
     }
@@ -198,10 +201,17 @@ function sendSimlpeMessage(channel, message) {
     client.say(channel, message);
 };
 
+// if the user is new to the channel, create an entry for them in the database.
+// should only be called after checking if user exists in db or not
 function createUserValue(username) {
-    console.log('This will do the db stuff');
+    console.log('This will create db stuff if the user is new');
 };
 
 function getUserColor(username) {
     console.log('This will query db for user color');
+};
+
+// check to see if the user is already in the database
+function checkUserDatabaseOnJoin(username) {
+    console.log("This will check for user info in db on join")
 };
