@@ -29,13 +29,13 @@ var streamSettings = {
 
 // EVENTS
 // client connection attempt
-client.on('connecting', (address, port) =>{ 
-    onConnectingHandler(address, port);
+client.on('connecting', (channel, address, port) =>{ 
+    onConnectingHandler(channel, address, port);
 });
 
 // on connection to server
-client.on('connected', (address, port) => {
-    onConnectedHandler(address, port);
+client.on('connected', (channel, address, port) => {
+    onConnectedHandler(channel, address, port);
 });
 
 //disconnected from server
@@ -49,45 +49,45 @@ client.on('reconnect', () => {
 }); 
 
 // user joins the chat. Use this to catalog user data. 
-client.on('join', (username) => {
-    onJoinHandler(username);
+client.on('join', (channel, username) => {
+    onJoinHandler(channel, username);
 });
 
 //on host by another streamer
-client.on('hosted', (username, viewers, autohost) => {
-    onHostHandler(username, viewers, autohost);
+client.on('hosted', (channel, username, viewers, autohost) => {
+    onHostHandler(channel, username, viewers, autohost);
 });
 
 // on subscription 
 // username, method used to subscribe (primer, paid, gifted...), custom message
-client.on('subscription', (username, method, message, userstate) => {
-   onSubscriptionHandler(username, method, message, userstate); 
+client.on('subscription', (channel, username, method, message, userstate) => {
+   onSubscriptionHandler(channel, username, method, message, userstate); 
 });
 
 //on raid from another streamer
-client.on('raided', (username, viewers) => {
-    onRaidHandler(username, viewers);
+client.on('raided', (channel, username, viewers) => {
+    onRaidHandler(channel, username, viewers);
 });
 
 //cheering by viewer
-client.on('cheer', (userstate, message) => {
-    onCheerHandler(userstate, message);
+client.on('cheer', (channel, userstate, message) => {
+    onCheerHandler(channel, userstate, message);
 });
 
 //upgrading gifted sub to selfpaid sub
-client.on('giftpaidupgrade', (username, sender, userstate) => {
-    onGiftUpgradeHandler(username, sender, userstate);
+client.on('giftpaidupgrade', (channel, username, sender, userstate) => {
+    onGiftUpgradeHandler(channel, username, sender, userstate);
 });
 
 //on Berdron hosting another channel
-client.on('hosting', (target, viewers) => {
-    onHostingHandler(target, viewers);
+client.on('hosting', (channel, target, viewers) => {
+    onHostingHandler(channel, target, viewers);
 });
 
 //resub event
 //username of resub, months as sub, sub message, userstate, method of subscription 
-client.on('resub', (username, months, message, userstate, methods) => {
-    onResubhandler(username, months, message, userstate, methods);
+client.on('resub', (channel, username, months, message, userstate, methods) => {
+    onResubhandler(channel, username, months, message, userstate, methods);
 });
 
 //subgift event
@@ -97,8 +97,8 @@ client.on('resub', (username, months, message, userstate, methods) => {
 //  userstate["msg-param-recipient-id"]: String - The ID of the recipient
 //  userstate["msg-param-recipient-user-name"]: String - The login of the recipient
 //  userstate["msg-param-sender-count"] : Boolean or String - The count of giftsubs the sender has sent
-client.on('subgift', (username, streakMonths, recipient, methods, userstate) => {
-    onSubGiftHandler(username, streakMonths, recipient, methods, userstate);
+client.on('subgift', (channel, username, streakMonths, recipient, methods, userstate) => {
+    onSubGiftHandler(channel, username, streakMonths, recipient, methods, userstate);
 }); 
 
 // monitor messages
@@ -143,11 +143,11 @@ function currentBrewResponse(channel) {
 };
 
 
-function onConnectingHandler(address, port) {
+function onConnectingHandler(channel, address, port) {
     console.log(`Connecting to ${address}:${port}...`)
 };
 
-function onConnectedHandler(address, port) {
+function onConnectedHandler(channel, address, port) {
     console.log('Connected to the chat successfully!')
 };
 
@@ -160,40 +160,48 @@ function onReconnectHandler() {
     console.log('Reconnected to chat successfully!')
 };
 
-function onJoinHandler(username) {
-    if (username === "berdron_bot" || username === "berdron" || username === "moobot"){
-        break
-    }
+function onJoinHandler(channel, username) {
+    username = username.toLowerCase();
+    // edge cases for broadcaster and bots
+    if (username === "berdron_bot" || username === "berdron" || username === "moobot" || username === "streamlabs") return;
+
     if (streamSettings.newUserGreet) {
         sendSimlpeMessage('berdron', `Hi ${username}, welcome to the stream!`)
     }
     createUserValue(username);
 
 };
-function onHostHandler() {
+
+// create a welcoming message when getting a host from another channel
+function onHostHandler(channel, username, viewers, autohost) {
 
 };
 
-function onSubscriptionHandler() {
+function onSubscriptionHandler(channel, username, method, message, userstate) {
 
 };
 
-function onRaidHandler() {
+function onRaidHandler(channel, username, viewers) {
 
 };
-function onCheerHandler() {
+
+function onCheerHandler(channel, userstate, message) {
 
 };
-function onGiftUpgradeHandler() {
+
+function onGiftUpgradeHandler(channel, username, sender, userstate) {
 
 };
-function onHostingHandler() {
+
+function onHostingHandler(channel, target, viewers) {
 
 };
-function onResubhandler() {
+
+function onResubhandler(channel, username, months, message, userstate, methods) {
 
 };
-function onSubGiftHandler() {
+
+function onSubGiftHandler(channel, username, streakMonths, recipient, methods, userstate) {
 
 };
 
