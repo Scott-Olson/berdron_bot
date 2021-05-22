@@ -23,7 +23,7 @@ client.connect();
 // currentBrew holds the current brew for the command !brew
 var currentBrew = 'Tremor California Lager';
 var streamSettings = {
-    newUserGreet: true,
+    newUserGreet: false,
 
 }
 
@@ -129,8 +129,14 @@ client.on('message', (channel, tags, message, self) => {
     };
 
     if (message.toLowerCase() === '!bot') {
-        client.say(channel, "Beep boop, I am a bot.");
+        client.say(channel, "Beep boop, I am a bot made by berdron.");
     }
+
+    if (message.toLowerCase().startsWith('!setgreetingstate')) {
+        var m = message.slice(17);
+        setNewUserGreetingState(m);
+    }
+
 
 });
 
@@ -174,11 +180,19 @@ function onJoinHandler(channel, username) {
 
 // create a welcoming message when getting a host from another channel
 function onHostHandler(channel, username, viewers, autohost) {
+    if (autohost){
+        var m = `Welcome back ${username} and your ${viewers} viewers!`;
+    }
+    else{
+        var m = `Woah, thanks ${username} for the raid! Welcome to you and your ${viewers} viewers!`;
+    }
 
+    client.say(channel, m);
 };
 
+// create a custom message for the new sub
 function onSubscriptionHandler(channel, username, method, message, userstate) {
-
+    console.log(userstate);
 };
 
 function onRaidHandler(channel, username, viewers) {
@@ -212,7 +226,7 @@ function sendSimlpeMessage(channel, message) {
 // if the user is new to the channel, create an entry for them in the database.
 // should only be called after checking if user exists in db or not
 function createUserValue(username) {
-    console.log('This will create db stuff if the user is new');
+    console.log(`This will create db stuff if the user is new ${username}`);
 };
 
 function getUserColor(username) {
@@ -221,5 +235,10 @@ function getUserColor(username) {
 
 // check to see if the user is already in the database
 function checkUserDatabaseOnJoin(username) {
-    console.log("This will check for user info in db on join")
+    console.log(`This will check for user info in db on join: ${username}`);
+};
+
+function setNewUserGreetingState(command) {
+    console.log(`Changing the greeting message state to: ${command}`);
+    streamSettings.newUserGreet = command;
 };
