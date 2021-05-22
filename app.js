@@ -212,12 +212,16 @@ function onHostingHandler(channel, target, viewers) {
 };
 
 function onResubhandler(channel, username, months, message, userstate, methods) {
-
+    console.log(`${username} just resubbed for ${months}.`)
+    var m = `Thanks for sticking with me for ${months}, ${username}!!`
+    sendSimlpeMessage(channel, m);
 };
 
 function onSubGiftHandler(channel, username, streakMonths, recipient, methods, userstate) {
 
 };
+
+// HELPER FUNCTIONS
 
 function sendSimlpeMessage(channel, message) {
     client.say(channel, message);
