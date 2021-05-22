@@ -89,6 +89,7 @@ This is the initial tech design I came up with. It will evolve and grow as the b
  * [x] Get test env running on raspi
  * [ ] Build out functions
    * [ ] get/set colors
+     * [ ] validate/clean user input
    * [ ] get user info
    * [ ] get bot details
    * [ ] welcome message
