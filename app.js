@@ -1,4 +1,5 @@
 const tmi = require('tmi.js');
+const parse = require('color-parse');
 require('dotenv').config();
 
 
@@ -246,3 +247,9 @@ function setNewUserGreetingState(command) {
     console.log(`Changing the greeting message state to: ${command}`);
     streamSettings.newUserGreet = command;
 };
+
+// set the currentBrew global variable
+function setCurrentBrew(newBrew) {
+    console.log(`Setting the new brew to ${newBrew}`);
+    currentBrew = newBrew;
+}
