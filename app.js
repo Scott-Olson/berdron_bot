@@ -120,8 +120,7 @@ client.on('message', (channel, tags, message, self) => {
             // parse the message, take of the command and save the rest
             var m = message.slice(5);
             // set the currentBrew to the new string
-            currentBrew = m;
-            console.log(`Setting currentBrew to: ${currentBrew}.`);
+            setCurrentBrew(m);
             currentBrewResponse(channel);
         }
         else{
@@ -145,8 +144,8 @@ client.on('message', (channel, tags, message, self) => {
 // EVENT HANDLERS
 
 function currentBrewResponse(channel) {
-    var mes = `Berdron is drinking ${currentBrew}. berdroNCheers berdroNCheers berdroNCheers`;
-    client.say(channel, mes);
+    var m = `Berdron is drinking ${currentBrew}. berdroNCheers berdroNCheers berdroNCheers`;
+    client.say(channel, m);
 };
 
 
