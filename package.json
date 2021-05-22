@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Scott-Olson/berdron_bot#readme",
   "dependencies": {
+    "color-parse": "^1.4.2",
     "dotenv": "^9.0.2",
     "mongoose": "^5.12.10",
     "tmi.js": "^1.8.3"
