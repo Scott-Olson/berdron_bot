@@ -21,6 +21,6 @@ export default class MqttService {
         this.client.publish(topic, message);
     };
 
-
+    
 
 };
