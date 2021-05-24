@@ -211,6 +211,7 @@ function onHostingHandler(channel, target, viewers) {
 
 };
 
+// 
 function onResubhandler(channel, username, months, message, userstate, methods) {
     console.log(`${username} just resubbed for ${months}.`)
     var m = `Thanks for sticking with me for ${months}, ${username}!!`
@@ -249,17 +250,18 @@ function setUserColor(params) {
 
 // validate the user supplied string
 function validateColor(params) {
-    
+    return;
 };
 
 // validate data from the user and the requester
 function validateUser(params) {
-    
+    return;
 };
 
 // check to see if the user is already in the database
 function checkUserDatabaseOnJoin(username) {
     console.log(`This will check for user info in db on join: ${username}`);
+    return;
 };
 
 function setNewUserGreetingState(command) {
@@ -271,4 +273,4 @@ function setNewUserGreetingState(command) {
 function setCurrentBrew(newBrew) {
     console.log(`Setting the new brew to ${newBrew}`);
     currentBrew = newBrew;
-}
+};
