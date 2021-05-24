@@ -15,7 +15,11 @@ export default class MqttService {
         catch{
             return {connected: 0, status: 'Failed to connect to mqtt broker'}
         }
-    }
+    };
+
+    sendMessage(topic, message) {
+        this.client.publish(topic, message);
+    };
 
 
 
