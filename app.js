@@ -233,8 +233,28 @@ function createUserValue(username) {
     console.log(`This will create db stuff if the user is new ${username}`);
 };
 
+// returns the color that the user has set in DB
 function getUserColor(username) {
     console.log('This will query db for user color');
+};
+
+// set the color of the user as requested
+function setUserColor(params) {
+    if (validateUser()){
+        if(validateColor()){
+            // change the color in the database
+        }
+    }
+};
+
+// validate the user supplied string
+function validateColor(params) {
+    
+};
+
+// validate data from the user and the requester
+function validateUser(params) {
+    
 };
 
 // check to see if the user is already in the database
