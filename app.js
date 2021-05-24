@@ -150,11 +150,11 @@ function currentBrewResponse(channel) {
 
 
 function onConnectingHandler(channel, address, port) {
-    console.log(`Connecting to ${address}:${port}...`)
+    console.log(`Connecting to ${address}:${port}...`);
 };
 
 function onConnectedHandler(channel, address, port) {
-    console.log('Connected to the chat successfully!')
+    console.log('Connected to the chat successfully!');
 };
 
 
@@ -163,7 +163,7 @@ function onDisconnectHandler(reason) {
 };
 
 function onReconnectHandler() {
-    console.log('Reconnected to chat successfully!')
+    console.log('Reconnected to chat successfully!');
 };
 
 function onJoinHandler(channel, username) {
@@ -172,7 +172,7 @@ function onJoinHandler(channel, username) {
     if (username === "berdron_bot" || username === "berdron" || username === "moobot" || username === "streamlabs") return;
 
     if (streamSettings.newUserGreet) {
-        sendSimlpeMessage('berdron', `Hi ${username}, welcome to the stream!`)
+        sendChatMessage('berdron', `Hi ${username}, welcome to the stream!`)
     }
     createUserValue(username);
 
@@ -215,16 +215,18 @@ function onHostingHandler(channel, target, viewers) {
 function onResubhandler(channel, username, months, message, userstate, methods) {
     console.log(`${username} just resubbed for ${months}.`)
     var m = `Thanks for sticking with me for ${months}, ${username}!!`
-    sendSimlpeMessage(channel, m);
+    sendChatMessage(channel, m);
 };
 
+// create custom message to the sub and recipient
 function onSubGiftHandler(channel, username, streakMonths, recipient, methods, userstate) {
 
 };
 
 // HELPER FUNCTIONS
 
-function sendSimlpeMessage(channel, message) {
+// sent chat message, just message without extra formatting
+function sendChatMessage(channel, message) {
     client.say(channel, message);
 };
 
