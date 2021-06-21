@@ -1,4 +1,5 @@
 const tmi = require('tmi.js');
+const mqtt = require('mqtt');
 const parse = require('color-parse');
 require('dotenv').config();
 
@@ -20,6 +21,9 @@ const client = new tmi.Client({
 
 // instantiate the client connection
 client.connect();
+
+// connect to the local mqtt client
+const mqttClient = mqtt.connect();
 
 // currentBrew holds the current brew for the command !brew
 var currentBrew = 'Tremor California Lager';
